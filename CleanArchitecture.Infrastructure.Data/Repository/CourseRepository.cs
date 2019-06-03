@@ -17,7 +17,7 @@ namespace CleanArchitecture.Infrastructure.Data.Repository
         public void Add(Course course)
         {
             _ctx.Courses.Add(course);
-            _ctx.SaveChangesAsync();
+            _ctx.SaveChanges();
         }
 
         public IEnumerable<Course> GetCourses()

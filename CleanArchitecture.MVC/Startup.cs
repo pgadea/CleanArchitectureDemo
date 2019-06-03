@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CleanArchitecture.Infrastructure.Data.Context;
 using CleanArchitecture.Infrastructure.IoC;
+using MediatR;
 
 namespace CleanArchitecture.MVC
 {
@@ -46,6 +47,7 @@ namespace CleanArchitecture.MVC
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            services.AddMediatR(typeof(Startup));
             RegisterServices(services);
         }
 
