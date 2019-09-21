@@ -1,7 +1,7 @@
 ﻿using CleanArchitecture.Domain.Interfaces;
 using CleanArchitecture.Domain.Models;
 using CleanArchitecture.Infrastructure.Data.Context;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace CleanArchitecture.Infrastructure.Data.Repository
 {
@@ -20,7 +20,7 @@ namespace CleanArchitecture.Infrastructure.Data.Repository
             _ctx.SaveChanges();
         }
 
-        public IEnumerable<Course> GetCourses()
+        public IQueryable<Course> GetCourses()
         {
             return _ctx.Courses;
         }

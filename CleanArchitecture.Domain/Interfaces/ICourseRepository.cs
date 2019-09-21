@@ -1,11 +1,11 @@
 ﻿using CleanArchitecture.Domain.Models;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace CleanArchitecture.Domain.Interfaces
 {
     public interface ICourseRepository
     {
-        IEnumerable<Course> GetCourses();
+        IQueryable<Course> GetCourses();
         void Add(Course course);
     }
 }

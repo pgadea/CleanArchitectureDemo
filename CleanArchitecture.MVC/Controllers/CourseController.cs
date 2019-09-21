@@ -1,5 +1,4 @@
 ﻿using CleanArchitecture.Application.Interfaces;
-using CleanArchitecture.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,8 +19,7 @@ namespace CleanArchitecture.Mvc.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            CourseViewModel model = _courseService.GetCourses();
-            return View(model);
+            return View(_courseService.GetCourses());
         }
     }
 }

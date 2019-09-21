@@ -1,4 +1,5 @@
-﻿using CleanArchitecture.Infrastructure.Data.Context;
+﻿using CleanArchitecture.Api.Configurations;
+using CleanArchitecture.Infrastructure.Data.Context;
 using CleanArchitecture.Infrastructure.IoC;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -34,7 +35,10 @@ namespace CleanArchitecture.Api
             });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
             services.AddMediatR(typeof(Startup));
+
+            services.RegisterAutoMapper();
 
             RegisterServices(services);
         }
